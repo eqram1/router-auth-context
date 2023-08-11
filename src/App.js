@@ -5,6 +5,8 @@ import Main from './Layout/Main';
 import Home from './Components/Home';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import PrivateRoutes from './Routes/PrivateRoutes';
+import Orders from './Components/Orders';
 
 function App() {
 
@@ -15,7 +17,11 @@ function App() {
       children: [
         {
           path: '/',
-          element: <Home></Home>
+          element: <PrivateRoutes><Home></Home></PrivateRoutes>
+        },
+        {
+          path: '/orders',
+          element: <PrivateRoutes><Orders></Orders></PrivateRoutes>
         },
         {
           path: '/login',
